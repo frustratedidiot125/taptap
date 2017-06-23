@@ -1,0 +1,21 @@
+{
+  "name": "fake fun facts",
+  "version": "1.0.0",
+  "description": "completely gutted...no longer based on space facts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "fact"
+  ],
+  "author": "hbl",
+  "license": "pending",
+ "dependencies": {
+    "alexa-app": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  }
+}
