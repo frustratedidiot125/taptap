@@ -59,6 +59,10 @@ var data = [
     "There are tribes in ancient russia that regularly rode wild boars into battle. ",
     "Attack rabbits are real. Beware."
 ];
+var factArr = data;
+var factIndex = Math.floor(Math.random() * factArr.length);
+var randomFact = factArr[factIndex];
+
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.--  NVM just broke it.
@@ -78,10 +82,10 @@ var data = [
 
 
 alexaApp.launch(function(request, response) {
-  var factArrA = data;
-var factIndexA = Math.floor(Math.random() * factArrA.length);
-var randomFactA = factArrA[factIndexA];
-    response.say(GET_FACT_MESSAGE + randomFactA+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
+//var factArrA = data;
+// var factIndexA = Math.floor(Math.random() * factArrA.length);
+// var randomFactA = factArrA[factIndexA];
+    response.say(GET_FACT_MESSAGE + randomFact+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
 });
 
 alexaApp.intent("GetNewFactIntent", {
@@ -90,9 +94,7 @@ alexaApp.intent("GetNewFactIntent", {
       "a fact", "tell me a fact", "tell me a fun fact", "give me a fact", "give me a fake fact", "tell me trivia", "tell me some fake trivia", "give me trivia", "give me fake trivia", "tell me something", "give me something", "tell me a fake fun fact", 
                 "tell me something interesting", "tell me something new", "give me a fun fact", "enlighten me", "enlighten us", "tell me something that isn't true", "tell me something", "give me another", "give me another fact", "can i have another"
     ]},
-var factArr = data;
-var factIndex = Math.floor(Math.random() * factArr.length);
-var randomFact = factArr[factIndex];
+
   response.say(GET_FACT_MESSAGE + randomFact + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false));
 
     
