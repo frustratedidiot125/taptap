@@ -78,10 +78,10 @@ var data = [
 
 
 alexaApp.launch(function(request, response) {
-  var factArr = data;
-var factIndex = Math.floor(Math.random() * factArr.length);
-var randomFact = factArr[factIndex];
-    response.say(GET_FACT_MESSAGE + randomFact+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
+  var factArrA = data;
+var factIndexA = Math.floor(Math.random() * factArrA.length);
+var randomFactA = factArrA[factIndexA];
+    response.say(GET_FACT_MESSAGE + randomFactA+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
 });
 
 alexaApp.intent("GetNewFactIntent", {
