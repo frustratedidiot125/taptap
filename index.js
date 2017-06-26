@@ -1,6 +1,3 @@
-// 'use strict';
-// var Alexa = require('alexa-sdk');
-
 var express = require("express");
 var alexa = require("alexa-app");
 
