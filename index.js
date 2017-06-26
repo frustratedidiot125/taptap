@@ -82,7 +82,7 @@ alexaApp.launch(function(request, response) {
     response.say(GET_FACT_MESSAGE + randomFact).reprompt(HELP_MESSAGE).shouldEndSession(false);
 });
 alexaApp.intent("GetNewFactIntent", {
-  "slots": {} },
+  "slots": {},
                   "utterances": [
       "a fact", "tell me a fact", "tell me a fun fact", "give me a fact", "give me a fake fact", "tell me trivia", "tell me some fake trivia", "give me trivia", "give me fake trivia", "tell me something", "give me something", "tell me a fake fun fact", 
                 "tell me something interesting", "tell me something new", "give me a fun fact", "enlighten me", "enlighten us", "tell me something that isn't true", "tell me something", "give me another", "give me another fact", "can i have another"
