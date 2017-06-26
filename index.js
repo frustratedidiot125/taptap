@@ -79,8 +79,9 @@ var factArr = data;
         var randomFact = factArr[factIndex];
 
 alexaApp.launch(function(request, response) {
-    response.say(GET_FACT_MESSAGE + randomFact).reprompt(HELP_MESSAGE).shouldEndSession(false);
+    response.say(GET_FACT_MESSAGE + randomFact+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
 });
+
 alexaApp.intent("GetNewFactIntent", {
   "slots": {},
                   "utterances": [
@@ -88,8 +89,8 @@ alexaApp.intent("GetNewFactIntent", {
                 "tell me something interesting", "tell me something new", "give me a fun fact", "enlighten me", "enlighten us", "tell me something that isn't true", "tell me something", "give me another", "give me another fact", "can i have another"
     ]
   },
-  response.say(GET_FACT_MESSAGE + randomFact).reprompt(HELP_MESSAGE).shouldEndSession(false));
-  );
+  response.say(GET_FACT_MESSAGE + randomFact + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false));
+
     
    // 'GetNewFactIntent': function () {
      //   var factArr = data;
