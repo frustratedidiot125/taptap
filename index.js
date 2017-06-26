@@ -88,7 +88,7 @@ alexaApp.intent("GetNewFactIntent", {
                 "tell me something interesting", "tell me something new", "give me a fun fact", "enlighten me", "enlighten us", "tell me something that isn't true", "tell me something", "give me another", "give me another fact", "can i have another"
     ]
   },
-  response.say(GET_FACT_MESSAGE + randomFact).reprompt(HELP_MESSAGE).shouldEndSession(false);
+  response.say(GET_FACT_MESSAGE + randomFact).reprompt(HELP_MESSAGE).shouldEndSession(false));
   );
     
    // 'GetNewFactIntent': function () {
