@@ -99,7 +99,16 @@ alexaApp.intent("GetNewFactIntent", {
      //   this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
 //    },
 
-
+alexaApp.intent("AMAZON.HelpIntent", {
+  "slots": {} },
+//"utterances": [ 
+ //              "help", "help me"
+  //              ]
+//  },
+  function(request, response) {
+    response.say(HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
+  }
+ );
 
 
  //   'AMAZON.HelpIntent': function () {
@@ -114,3 +123,28 @@ alexaApp.intent("GetNewFactIntent", {
    //     this.emit(':tell', STOP_MESSAGE);
  //   }
 // };
+
+
+alexaApp.intent("AMAZON.StopIntent", {
+  "slots": {} },
+//"utterances": [ 
+ //              "help", "help me"
+  //              ]
+//  },
+  function(request, response) {
+    response.say("Goodbye!").shouldEndSession(true);
+  }
+ );
+
+alexaApp.intent("AMAZON.CancelIntent", {
+  "slots": {} },
+//"utterances": [ 
+ //              "help", "help me"
+  //              ]
+//  },
+  function(request, response) {
+    response.say("Cancelling. Goodbye!").shouldEndSession(true);
+  }
+ );
+
+app.listen(PORT, () => console.log("Listening on port " + PORT + "."));
