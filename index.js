@@ -35,7 +35,7 @@ app.set("view engine", "ejs");
 var APP_ID = undefined;
 
 var SKILL_NAME = "Fake fun facts";
-var GET_FACT_MESSAGE = "Did you know: ";
+var GET_FACT_MESSAGE = "Little known fact:";
 var HELP_MESSAGE = "You can say give me a fun fact, or, you can say exit... What can I help you with?";
 var HELP_REPROMPT = "What can I help you with?";
 var STOP_MESSAGE = "Goodbye!";
