@@ -61,35 +61,34 @@ var data = [
 ];
 
 //=========================================================================================================================================
-//Editing anything below this line might break your skill.  
+//Editing anything below this line might break your skill.--  NVM just broke it.
 //=========================================================================================================================================
-exports.handler = function(event, context, callback) {
-    var alexa = Alexa.handler(event, context);
-    alexa.APP_ID = APP_ID;
-    alexa.registerHandlers(handlers);
-    alexa.execute();
-};
-
-var handlers = {
-    'LaunchRequest': function () {
-        this.emit('GetNewFactIntent');
-    },
-    'GetNewFactIntent': function () {
-        var factArr = data;
-        var factIndex = Math.floor(Math.random() * factArr.length);
-        var randomFact = factArr[factIndex];
-        var speechOutput = GET_FACT_MESSAGE + randomFact;
-        this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
-    },
-    'AMAZON.HelpIntent': function () {
-        var speechOutput = HELP_MESSAGE;
-        var reprompt = HELP_REPROMPT;
-        this.emit(':ask', speechOutput, reprompt);
-    },
-    'AMAZON.CancelIntent': function () {
-        this.emit(':tell', STOP_MESSAGE);
-    },
-    'AMAZON.StopIntent': function () {
-        this.emit(':tell', STOP_MESSAGE);
-    }
-};
+// exports.handler = function(event, context, callback) {
+ //   var alexa = Alexa.handler(event, context);
+  //  alexa.APP_ID = APP_ID;
+   // alexa.registerHandlers(handlers);
+   // alexa.execute();
+// };
+// var handlers = {
+   // 'LaunchRequest': function () {
+     //   this.emit('GetNewFactIntent');
+  //  },
+   // 'GetNewFactIntent': function () {
+     //   var factArr = data;
+      //  var factIndex = Math.floor(Math.random() * factArr.length);
+     //   var randomFact = factArr[factIndex];
+    //    var speechOutput = GET_FACT_MESSAGE + randomFact;
+     //   this.emit(':tellWithCard', speechOutput, SKILL_NAME, randomFact)
+//    },
+ //   'AMAZON.HelpIntent': function () {
+ //       var speechOutput = HELP_MESSAGE;
+  //      var reprompt = HELP_REPROMPT;
+  //      this.emit(':ask', speechOutput, reprompt);
+  //  },
+  //  'AMAZON.CancelIntent': function () {
+    //    this.emit(':tell', STOP_MESSAGE);
+ //   },
+  //  'AMAZON.StopIntent': function () {
+   //     this.emit(':tell', STOP_MESSAGE);
+ //   }
+// };
