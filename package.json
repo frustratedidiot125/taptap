@@ -13,7 +13,7 @@
     "fact"
   ],
   "author": "HF@Play, llf.",
-  "license": "MIT",
+  "license": "pending",
  "dependencies": {
     "alexa-app": "^4.0.0",
     "ejs": "^2.5.6",
