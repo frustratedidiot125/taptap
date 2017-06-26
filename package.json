@@ -1,20 +1,28 @@
 {
-  "name": "fake fun facts",
-  "version": "1.0.0",
-  "description": "completely gutted...no longer based on space facts.",
+  "name": "fakefunfacts",
+  "version": "0.0.3",
+  "description": "A heavily heavily frustratingly modified Alexa Skill project using the alexa-app module with Express.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frustratedidiot123/fakefunfacts.git"
+  },
   "keywords": [
     "alexa",
-    "skill",
-    "fact"
+    "amazon",
+    "echo",
+    "skills"
   ],
-  "author": "HF@Play, llf.",
-  "license": "pending",
- "dependencies": {
+  "author": "BH/V/Frustr123",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ffrusyratedidiot123/issues"
+  },
+  "dependencies": {
     "alexa-app": "^4.0.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2"
