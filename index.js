@@ -37,7 +37,7 @@ var APP_ID = undefined;
 var SKILL_NAME = "Fake fun facts";
 var GET_FACT_MESSAGE = "Little known fact:";
 var HELP_MESSAGE = "You can say give me another fact, or, say stop to exit. which would you like?";
-var HELP_REPROMPT = "what can i help you with?";
+var HELP_REPROMPT = "which would you like?";
 var STOP_MESSAGE = "Goodbye!";
 
 //=========================================================================================================================================
@@ -89,7 +89,7 @@ alexaApp.launch(function(request, response) {
 //var factArrA = data;
 // var factIndexA = Math.floor(Math.random() * factArrA.length);
 // var randomFactA = factArrA[factIndexA];
-    response.say(GET_FACT_MESSAGE + randomFact+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
+    response.say(GET_FACT_MESSAGE + randomFact()+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
 });
 
 alexaApp.intent("GetNewFactIntent", {
@@ -100,7 +100,7 @@ alexaApp.intent("GetNewFactIntent", {
     ]
   },
                 function (request, response){
-  response.say(GET_FACT_MESSAGE + randomFact + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false)});
+  response.say(GET_FACT_MESSAGE + randomFact() + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false)});
 
     
    // 'GetNewFactIntent': function () {
