@@ -59,9 +59,13 @@ var data = [
     "There are tribes in ancient russia that regularly rode wild boars into battle. ",
     "Attack rabbits are real. Beware."
 ];
-var factArr = data;
-var factIndex = Math.floor(Math.random() * factArr.length);
-var randomFact = factArr[factIndex];
+
+var randomFact = function () {
+  var factArr = data;
+  var factIndex = Math.floor(Math.random() * factArr.length);
+  var nextFact = factArr[factIndex];
+  return nextFact;
+  };
 
 
 //=========================================================================================================================================
