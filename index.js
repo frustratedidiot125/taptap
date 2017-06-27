@@ -37,7 +37,7 @@ var APP_ID = undefined;
 var SKILL_NAME = "Fake fun facts";
 var GET_FACT_MESSAGE = "Little known fact.";
 var HELP_MESSAGE = "You can say give me another fact, or, say stop to exit. which would you like?";
-var HELP_REPROMPT = "you can say, give me another fact, ot stop to exit.";
+var HELP_REPROMPT = "You can say, give me another fact, or stop to exit.";
 var STOP_MESSAGE = "Goodbye!";
 
 //=========================================================================================================================================
