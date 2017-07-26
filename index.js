@@ -87,7 +87,7 @@ alexaApp.launch(function(request, response) {
 alexaApp.intent("Spin", {
   "slots": {},
                   "utterances": [
-      "spin", '"spin again" 
+      "spin", "spin again" 
     ]
   },
                 function (request, response){
