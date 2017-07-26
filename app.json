@@ -1,7 +1,7 @@
 {
-  "name": "fake fun facts",
-  "description": "A facts skill for Heroku.",
-  "repository": "https://github.com/frustratedidiot123/fakefunfacts",
+  "name": "Animal spinner",
+  "description": "A cow goes moo.",
+  "repository": "https://github.com/frustratedidiot123/pooranimalspin",
   "logo": "https://avatars0.githubusercontent.com/u/25057028",
   "keywords": ["alexa", "amazon", "echo", "skills"],
   "buildpacks": [
