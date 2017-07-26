@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
-var spinmessage = "Spinning. 
+var spinmessage = "Spinning.  ";
 var HELP_MESSAGE = "  You can say spin again, or, stop to exit.?";
 var HELP_REPROMPT = "You can say, spin, spin again, or stop to exit. Which would you like?";
 var STOP_MESSAGE = "Goodbye!";
