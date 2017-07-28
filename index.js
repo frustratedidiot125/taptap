@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var spinmessage = "Spinning.  ";
-var HELP_MESSAGE = "You can say an animal name, say spin the wheel, or stop to exit.";
+var HELP_MESSAGE = "You can give me an animal name, say spin the wheel, or stop to exit.";
 var HELP_REPROMPT = "You can say, spin, the name of an animal, or stop to exit. Which would you like?";
 var STOP_MESSAGE = "Goodbye!";
 
