@@ -101,7 +101,8 @@ alexaApp.intent("Animal", {
     slots: {Animal: 'AMAZON.Animal'},
     utterances: ['{-|Animal}', 'What sound does an {-|Animal} make', 'What does an {-|Animal} say', 'What does the {-|Animal} say']
   },    
-       let color = request.slot('Animal');
+       function (request, response) {
+                let color = request.slot('Animal');
 
     let selectedColor = data[color];
 
