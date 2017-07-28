@@ -107,7 +107,7 @@ alexaApp.intent("Animal", {
     console.log('color:', color);
 
     if (selectedColor) {
-      response.say(`The ${color} goes ${selectedColor}`);
+      response.say(`The ${color} ${selectedColor}`);
       response.shouldEndSession(true);
     }
     else {
