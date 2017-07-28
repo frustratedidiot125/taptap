@@ -30,9 +30,10 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var spinmessage = "Spinning.  ";
-var HELP_MESSAGE = "  You can say spin again, or, stop to exit.?";
-var HELP_REPROMPT = "You can say, spin, spin again, or stop to exit. Which would you like?";
+var HELP_MESSAGE = "  You can say spin again, give me an animal name, or, stop to exit.?";
+var HELP_REPROMPT = "You can say, spin, the name of an animal, or stop to exit. Which would you like?";
 var STOP_MESSAGE = "Goodbye!";
+
 
 //=========================================================================================================================================
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
@@ -82,7 +83,7 @@ alexaApp.launch(function(request, response) {
 //var factArrA = data;
 // var factIndexA = Math.floor(Math.random() * factArrA.length);
 // var randomFactA = factArrA[factIndexA];
-    response.say(randomFact()+HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
+    response.say(HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
 });
 
 alexaApp.intent("Spin", {
@@ -92,7 +93,7 @@ alexaApp.intent("Spin", {
     ]
   },
                 function (request, response){
-  response.say(spinmessage + randomFact() + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false)});
+  response.say(spinmessage + "A" + randomFact() + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false)});
 
     
    
