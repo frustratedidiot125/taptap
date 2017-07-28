@@ -41,7 +41,7 @@ var STOP_MESSAGE = "Goodbye!";
 var data = {
     'cow' : 'goes moo. Then it makes chomping noises.', // He was a good friend to many, but not me.",
     'rooster' : 'goes ah say ah say ah say ah say.',
-    'rabbit' : 'says what's up doc. The rest of the rabbits stare silently.',
+    'rabbit' : 'says whats up doc. The rest of the rabbits stare silently.',
     'giraffe' : 'is usually too tall to hear.',
     'cat' : 'goes growl. It just sounds like meow.',
   //meow. That's usually an indication they want to eat their owner. ',
