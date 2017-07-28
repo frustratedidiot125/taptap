@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frustratedidiot123/fakefunfacts.git"
+    "url": "git+https://github.com/frustratedidiot124/cowgo.git"
   },
   "keywords": [
     "alexa",
@@ -20,7 +20,7 @@
   "author": "BH/V/Frustr123",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ffrusyratedidiot123/issues"
+    "url": "https://github.com/frustratedidiot124/issues"
   },
   "dependencies": {
     "alexa-app": "^4.0.0",
