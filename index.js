@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var spinmessage = "Spinning.  ";
-var HELP_MESSAGE = "  You can say spin again, give me an animal name, or, stop to exit.?";
+var HELP_MESSAGE = "You can say an animal name, say spin the wheel, or stop to exit.";
 var HELP_REPROMPT = "You can say, spin, the name of an animal, or stop to exit. Which would you like?";
 var STOP_MESSAGE = "Goodbye!";
 
@@ -89,7 +89,7 @@ alexaApp.launch(function(request, response) {
 alexaApp.intent("Spin", {
   "slots": {},
                   "utterances": [
-      "spin", "spin again" 
+      "spin", "spin again", "spin the wheel"
     ]
   },
                 function (request, response){
