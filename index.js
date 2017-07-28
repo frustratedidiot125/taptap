@@ -51,7 +51,8 @@ var data = {
     'goldfish' : 'goes in circles.',
     'capybara' : 'goes splash.',
     'PC' : 'goes ding!',
-    'horse' : 'goes neigh, then goes and goes and gallops away.'
+    'horse' : 'goes neigh, then goes and goes and gallops away.',
+    'sheep' : 'goes baa! Then it votes republican."
 };
 
 var randomFact = function () {
