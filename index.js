@@ -97,7 +97,7 @@ alexaApp.intent("Spin", {
     ]
   },
                 function (request, response){
-  response.say(spinmessage + "A " + randomAnimalkey + data[randomAnimalkey]  ).shouldEndSession(true)});
+  response.say(spinmessage + "A " + randomAnimalkey + " " + data[randomAnimalkey]  ).shouldEndSession(true)});
 
 alexaApp.intent("Animal", {
     slots: {Animalname: 'AMAZON.Animal'},
