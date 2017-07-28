@@ -1,7 +1,7 @@
 {
   "name": "Animal spinner",
   "description": "A cow goes moo.",
-  "repository": "https://github.com/frustratedidiot123/pooranimalspin",
+  "repository": "https://github.com/frustratedidiot124/cowgo",
   "logo": "https://avatars0.githubusercontent.com/u/25057028",
   "keywords": ["alexa", "amazon", "echo", "skills"],
   "buildpacks": [
