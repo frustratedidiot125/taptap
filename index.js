@@ -95,7 +95,10 @@ alexaApp.intent("Spin", {
                 function (request, response){
   response.say(spinmessage + "A" + randomFact() + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false)});
 
-    
+alexaApp.intent("Animal", {
+    slots: {Animal: 'AMAZON.Animal'},
+    utterances: ['{-|Animal}', 'What sound does an {-|Animal} make', 'What does an {-|Animal} say', 'What does the {-|Animal} say']
+  },    
    
 
 alexaApp.intent("AMAZON.HelpIntent", {
