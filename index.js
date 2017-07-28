@@ -38,7 +38,7 @@ var STOP_MESSAGE = "Goodbye!";
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
 //=========================================================================================================================================/
 //: = says or goes
-var data = [
+var data = {
     'cow' : 'goes moo. Then it makes chomping noises.', // He was a good friend to many, but not me.",
     'rooster' : 'goes ah say ah say ah say ah say.',
     'rabbit' : 'says what's up doc. The rest of the rabbits stare silently.',
@@ -51,7 +51,7 @@ var data = [
     'capybara' : 'goes splash.',
     'PC' : 'goes ding!',
     'horse' : 'goes neigh, then goes and goes and gallops away.'
-    ];
+};
 
 var randomFact = function () {
   var factArr = data;
