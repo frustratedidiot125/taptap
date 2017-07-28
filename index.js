@@ -98,11 +98,11 @@ alexaApp.intent("Spin", {
   response.say(spinmessage + "A" + randomFact() + HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false)});
 
 alexaApp.intent("Animal", {
-    slots: {Animal: 'AMAZON.Animal'},
-    utterances: ['{-|Animal}', 'What sound does an {-|Animal} make', 'What does an {-|Animal} say', 'What does the {-|Animal} say']
+    slots: {Animalname: 'AMAZON.Animal'},
+    utterances: ['{-|Animalname}', 'What sound does an {-|Animalname} make', 'What does an {-|Animalname} say', 'What does the {-|Animalname} say']
   },    
        function (request, response) {
-                let color = request.slot('Animal');
+                let color = request.slot('Animalname');
 
     let selectedColor = data[color];
 
