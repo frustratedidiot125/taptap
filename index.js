@@ -56,12 +56,14 @@ var data = {
     'sheep' : 'goes baa! Then it votes republican.'
 };
 
-var randomFact = function () {
-  var factArr = data;
-  var factIndex = Math.floor(Math.random() * factArr.length);
-  var nextFact = factArr[factIndex];
-  return nextFact;
-  };
+//var randomFact = function () {
+//  var factArr = data;
+//  var factIndex = Math.floor(Math.random() * factArr.length);
+//  var nextFact = factArr[factIndex];
+ // return nextFact;
+//  };
+
+var randomAnimalkey = Object.keys(data)[Math.floor(Math.random()*Object.keys(data).length)]
 
 
 //=========================================================================================================================================
@@ -95,7 +97,7 @@ alexaApp.intent("Spin", {
     ]
   },
                 function (request, response){
-  response.say(spinmessage + "A" + randomFact()).shouldEndSession(true)});
+  response.say(spinmessage + "A" + randomAnimalkey + data[randomAnimalkey]  ).shouldEndSession(true)});
 
 alexaApp.intent("Animal", {
     slots: {Animalname: 'AMAZON.Animal'},
