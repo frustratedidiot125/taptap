@@ -36,20 +36,21 @@ var STOP_MESSAGE = "Goodbye!";
 
 //=========================================================================================================================================
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
-//=========================================================================================================================================
+//=========================================================================================================================================/
+//: = says or goes
 var data = [
-    "A cow says moo. Then it makes chomping noises.", // He was a good friend to many, but not me.",
-    "A rooster goes, ah say ah say ah say ah say.",
-    "A rabbit goes, what's up doc. The rest of the rabbits stare silently.",
-    "A giraffe is usually too tall to hear.",
-    "A cat goes growl. It just sounds like meow.",
+    'cow' : 'goes moo. Then it makes chomping noises.', // He was a good friend to many, but not me.",
+    'rooster' : 'goes ah say ah say ah say ah say.',
+    'rabbit' : 'says what's up doc. The rest of the rabbits stare silently.',
+    'giraffe' : 'is usually too tall to hear.',
+    'cat' : 'goes growl. It just sounds like meow.',
   //meow. That's usually an indication they want to eat their owner. ",
-    "A gerbil goes squeak. Then it bites your hand.",
-    "A dog goes grrr.",
-    "A goldfish goes in circles.",
-    "A capybara goes splash.",
-    "A PC goes ding!",
-    "A horse goes and goes and goes"
+    'gerbil' : 'goes squeak. Then it bites your hand.',
+    'dog' : 'goes grrr.',
+    'goldfish' : 'goes in circles.',
+    'capybara' : 'goes splash.',
+    'PC' : 'goes ding!',
+    'horse' : 'goes neigh, then goes and goes and gallops away.'
     ];
 
 var randomFact = function () {
