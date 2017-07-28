@@ -99,8 +99,25 @@ alexaApp.intent("Animal", {
     slots: {Animal: 'AMAZON.Animal'},
     utterances: ['{-|Animal}', 'What sound does an {-|Animal} make', 'What does an {-|Animal} say', 'What does the {-|Animal} say']
   },    
-   
+       let color = request.slot('Color');
 
+    let selectedColor = colors[color];
+
+    console.log('color:', color);
+
+    if (selectedColor) {
+      response.say(`The hex value for ${color} is <say-as interpret-as='spell-out'>${selectedColor}</say-as>`);
+      response.shouldEndSession(true);
+    }
+    else {
+      response.say(`Sorry, I'm not sure what the hex value is for ${color}`);
+      response.shouldEndSession(true);
+    }
+  }
+);
+
+                
+                
 alexaApp.intent("AMAZON.HelpIntent", {
   "slots": {} },
 //"utterances": [ 
