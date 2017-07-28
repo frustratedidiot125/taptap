@@ -115,7 +115,7 @@ alexaApp.intent("Animal", {
       response.shouldEndSession(true);
     }
     else {
-      response.say(`Sorry, as unlikely as it may seem, I'm not yet familiar with ${color}.`);
+      response.say(`I don\'t know what sound a ${color} makes. As unlikely as it seems, I\'m not yet familiar with that species.`);
       response.shouldEndSession(true);
     }
   }
