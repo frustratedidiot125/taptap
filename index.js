@@ -44,7 +44,7 @@ var data = {
     'rabbit' : 'says what's up doc. The rest of the rabbits stare silently.',
     'giraffe' : 'is usually too tall to hear.',
     'cat' : 'goes growl. It just sounds like meow.',
-  //meow. That's usually an indication they want to eat their owner. ",
+  //meow. That's usually an indication they want to eat their owner. ',
     'gerbil' : 'goes squeak. Then it bites your hand.',
     'dog' : 'goes grrr.',
     'goldfish' : 'goes in circles.',
