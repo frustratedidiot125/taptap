@@ -63,7 +63,6 @@ var data = {
  // return nextFact;
 //  };
 
-var randomAnimalkey = Object.keys(data)[Math.floor(Math.random()*Object.keys(data).length)]
 
 
 //=========================================================================================================================================
@@ -97,6 +96,8 @@ alexaApp.intent("Spin", {
     ]
   },
                 function (request, response){
+  
+var randomAnimalkey = Object.keys(data)[Math.floor(Math.random()*Object.keys(data).length)];
   response.say(spinmessage + "A " + randomAnimalkey + " " + data[randomAnimalkey]  ).shouldEndSession(true)});
 
 alexaApp.intent("Animal", {
