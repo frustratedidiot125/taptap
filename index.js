@@ -62,10 +62,11 @@ app.intent('GuessIntent', {
     }
   }
 );
-
+alexaApp.intent("AMAZON.HelpIntent", {
+  "slots": {} },
   function(request, response) {
     
-var HELP_MESSAGE = "Follow the frequent prompts or say stop to exit at any time.";
+var HELP_MESSAGE = "Follow the guessing prompts or say stop to exit at any time.";
     response.say(HELP_MESSAGE).shouldEndSession(false);
   }
  );
