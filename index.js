@@ -30,108 +30,12 @@ app.set("view engine", "ejs");
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
-var spinmessage = "Spinning.  ";
-var HELP_MESSAGE = "You can give me an animal name, say spin the wheel, or stop to exit.";
-var HELP_REPROMPT = "You can say, spin, the name of an animal, or stop to exit. Which would you like?";
-var STOP_MESSAGE = "Goodbye!";
 
 
-//=========================================================================================================================================
-//TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/data
-//=========================================================================================================================================/
-//: = says or goes
-var data = {
-    'cow' : 'goes moo. Then it makes chomping noises.', // He was a good friend to many, but not me.",
-    'rooster' : 'goes ah say ah say ah say ah say.',
-    'rabbit' : 'says whats up doc. The rest of the rabbits stare silently.',
-    'giraffe' : 'is usually too tall to hear.',
-    'cat' : 'goes growl. It just sounds like meow.',
-  //meow. That's usually an indication they want to eat their owner. ',
-    'gerbil' : 'goes squeak. Then it bites your hand.',
-    'dog' : 'goes grrr.',
-    'goldfish' : 'goes in circles.',
-    'capybara' : 'goes splash.',
-    'PC' : 'goes ding!',
-    'horse' : 'goes neigh, then goes and goes and gallops away.',
-    'sheep' : 'goes baa! Then it votes republican.'
-};
-
-//var randomFact = function () {
-//  var factArr = data;
-//  var factIndex = Math.floor(Math.random() * factArr.length);
-//  var nextFact = factArr[factIndex];
- // return nextFact;
-//  };
-
-
-
-//=========================================================================================================================================
-//Editing anything below this line might break your skill.--  NVM just broke it.
-//=========================================================================================================================================
-// exports.handler = function(event, context, callback) {
- //   var alexa = Alexa.handler(event, context);
-  //  alexa.APP_ID = APP_ID;
-   // alexa.registerHandlers(handlers);
-   // alexa.execute();
-// };
-// var handlers = {
-   // 'LaunchRequest': function () {
-     //   this.emit('GetNewFactIntent');
-  //  },
-
-
-
-
-alexaApp.launch(function(request, response) {
-//var factArrA = data;
-// var factIndexA = Math.floor(Math.random() * factArrA.length);
-// var randomFactA = factArrA[factIndexA];
-    response.say(HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
-});
-
-alexaApp.intent("Spin", {
-  "slots": {},
-                  "utterances": [
-      "spin", "spin again", "spin the wheel"
-    ]
-  },
-                function (request, response){
-  
-var randomAnimalkey = Object.keys(data)[Math.floor(Math.random()*Object.keys(data).length)];
-  response.say(spinmessage + "A " + randomAnimalkey + " " + data[randomAnimalkey]  ).shouldEndSession(true)});
-
-alexaApp.intent("Animal", {
-    slots: {Animalname: 'AMAZON.Animal'},
-    utterances: ['{-|Animalname}', 'What sound does an {-|Animalname} make', 'What does an {-|Animalname} say', 'What does the {-|Animalname} say']
-  },    
-       function (request, response) {
-                let color = request.slot('Animalname');
-
-    let selectedColor = data[color];
-
-    console.log('color:', color);
-
-    if (selectedColor) {
-      response.say(`The ${color} ${selectedColor}`);
-      response.shouldEndSession(true);
-    }
-    else {
-      response.say(`I don\'t know what sound a ${color} makes. As unlikely as it seems, I\'m not yet familiar with that species.`);
-      response.shouldEndSession(true);
-    }
-  }
-);
-
-                
-                
-alexaApp.intent("AMAZON.HelpIntent", {
-  "slots": {} },
-//"utterances": [ 
- //              "help", "help me"
-  //              ]
-//  },
   function(request, response) {
-    response.say(HELP_MESSAGE).reprompt(HELP_REPROMPT).shouldEndSession(false);
+    
+var HELP_MESSAGE = "Follow the frequent prompts or say stop to exit at any time.";
+    response.say(HELP_MESSAGE).shouldEndSession(false);
   }
  );
 
