@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 //=========================================================================================================================================
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
-app.launch(function(req, res) {
+alexaApp.launch(function(req, res) {
   var number = Math.floor(Math.random() * 99) + 1;
   res.session('number', number);
   res.session('guesses', 0);
@@ -38,7 +38,7 @@ app.launch(function(req, res) {
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
-app.intent('GuessIntent', {
+alexaApp.intent('GuessIntent', {
     "slots": { "guess": "NUMBER" },
     "utterances": ["{1-100|guess}"]
   },
