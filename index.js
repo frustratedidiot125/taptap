@@ -56,7 +56,7 @@ alexaApp.intent('GuessIntent', {
       } else if (guess < number) {
         res.say("Guess higher");
       } else if (guess = "??") { 
-        res.say("I'm sorry, what I heard wasn't a valid number. I really don't know what to do with that. Please guess again, but this time, give me a number!");
+        res.say("I'm sorry, that didn't sound like an actual number. Please try again, but this time, use your integers!");
         } else if (isNaN(guess)) {
                   res.say("I'm sorry, I didn't hear you say a number. Please try again.");
           }
