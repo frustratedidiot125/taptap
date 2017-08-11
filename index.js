@@ -56,7 +56,7 @@ alexaApp.intent('GuessIntent', {
       } else if (guess < number) {
         res.say("Guess higher");
       }
-      res.say("I'm sorry, did you say " + guess + "? " + guess + " is not a number. Please guess again.");
+      res.say("I may be mistaken, but I don't think that was a number. Please guess again.");
       res.session('guesses', guesses);
       res.shouldEndSession(false);
     }
