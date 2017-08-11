@@ -47,7 +47,7 @@ alexaApp.intent('GuessIntent', {
     var guess = req.slot('guess');
     var number = +req.session('number');
     if (!guess) {
-      res.say("Sorry, I didn't hear a number. The number was " + number);
+      res.say("I'm Sorry, I didn't hear anything. The number was " + number);
     } else if (guess == number) {
       res.say("Congratulations, you guessed the number in " + guesses + (guesses == 1 ? " try" : " tries"));
     } else {
@@ -56,7 +56,7 @@ alexaApp.intent('GuessIntent', {
       } else if (guess < number) {
         res.say("Guess higher");
       }
-      res.reprompt("Sorry, I didn't hear a number. Try again.");
+      res.say("I'm sorry, I didn't hear a number. Please try again.");
       res.session('guesses', guesses);
       res.shouldEndSession(false);
     }
