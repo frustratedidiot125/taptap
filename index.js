@@ -34,7 +34,7 @@ alexaApp.launch(function(req, res) {
   var number = Math.floor(Math.random() * 99) + 1;
   res.session('number', number);
   res.session('guesses', 0);
-  var prompt = "Guess a number between 1 and 100!";
+  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say next to begin, or say a step number if you wish to resume. Say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
