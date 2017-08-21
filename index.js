@@ -31,9 +31,9 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 alexaApp.launch(function(req, res) {
-  var number = Math.floor(Math.random() * 99) + 1;
-  res.session('number', number);
-  res.session('guesses', 0);
+
+  
+  res.session('step', 0);
   var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say next to begin, or say a step number if you wish to resume. Say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
