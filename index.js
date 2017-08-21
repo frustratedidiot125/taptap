@@ -38,15 +38,18 @@ alexaApp.launch(function(req, res) {
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
-alexaApp.intent('NextStepIntent', {
-    "slots": { },
-    "utterances": ["next", "next step", "begin"]
+alexaApp.intent('StepIntent', {
+    "slots": {"stepno" : "NUMBER" },
+    "utterances": ["next", "next step", "begin", "{stepno}", "step {stepno}"]
   },
   function(req, res) {
-   var step = (+req.session('step')) + 1;
-    // var slotstep = req.slot('step');
+  var slotstep = req.slot('stepno');
+  if (!isNaN(slotstep)){
+if (slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
+  var step = (+req.session('step')) + 1;
+   var slotstep = req.slot('stepno');
    
- // var step = +req.session('number');
+ // var step = +req.session('stepno');
     if (!step) { //rewrite if step equals 1, do this, else if step equals 2, res say this, if step doesn't make any sense, Rez say I'm sorry I didn't understand what you said there. Do you want to start over? And on the last one you should say something like stepwise session should end.
       res.say("I'm Sorry, I didn't hear you right. Please try again");
     } else if (guess == number) {
