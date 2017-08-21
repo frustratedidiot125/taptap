@@ -43,9 +43,10 @@ alexaApp.intent('NextStepIntent', {
     "utterances": ["{1-6|step}"]
   },
   function(req, res) {
-    var guesses = (+req.session('guesses')) + 1;
-    var guess = req.slot('step');
-    var number = +req.session('number');
+    // var guesses = (+req.session('guesses')) + 1;
+    var slotstep = req.slot('step');
+   
+  var step = +req.session('number');
     if (!guess) {
       res.say("I'm Sorry, I didn't hear anything. The number was " + number);
     } else if (guess == number) {
