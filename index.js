@@ -44,12 +44,27 @@ alexaApp.intent('StepIntent', {
   },
   function(req, res) {
   var slotstep = req.slot('stepno');
-  if (!isNaN(slotstep)){
-if (slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
+  
+if (!isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
+  var step = slotstep; 
+  } else if (!isNaN(slotstep) && slotstep == 0){
+    var step = 1;
+    
+    } else if (slotstep > 7 && !isNaN(slotstep)){
+      res.say("Whoa there, there are only 7 steps. Please choose a step between 1 and 7, or say next and I'll start from where I think you are.").shouldEndSession(false);
+      } else if (slotstep < 0 && !isNaN(slotstep)){
+        res.say("Really? Negative numbers? You must be messing with me  C'mon, let's try again, but this time, use positive integers between 1 and 7. Or say next.").shouldEndSession(false);
+        } else {
+  
+      
+      
   var step = (+req.session('step')) + 1;
-   var slotstep = req.slot('stepno');
+          }
+ //  var slotstep = req.slot('stepno');
    
  // var step = +req.session('stepno');
+  //// Now I just have to figure out how to assign steps 1 through 7 and how to go to them and whether or not to use goto or some sort of array or use if statements
+  
     if (!step) { //rewrite if step equals 1, do this, else if step equals 2, res say this, if step doesn't make any sense, Rez say I'm sorry I didn't understand what you said there. Do you want to start over? And on the last one you should say something like stepwise session should end.
       res.say("I'm Sorry, I didn't hear you right. Please try again");
     } else if (guess == number) {
