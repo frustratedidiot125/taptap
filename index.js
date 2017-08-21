@@ -33,22 +33,22 @@ app.set("view engine", "ejs");
 alexaApp.launch(function(req, res) {
 
   
-  res.session('step', 1);
-  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say next to begin, or say a step number if you wish to resume. Say stop at any time to exit. ";
+  res.session('step', 0);
+  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say next to begin, or say the number of the step you wish to resume. Say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
 alexaApp.intent('NextStepIntent', {
-    "slots": { "step": "NUMBER" },
-    "utterances": ["{1-6|step}"]
+    "slots": { },
+    "utterances": ["next", "next step", "begin"]
   },
   function(req, res) {
-    // var guesses = (+req.session('guesses')) + 1;
-    var slotstep = req.slot('step');
+   var step = (+req.session('step')) + 1;
+    // var slotstep = req.slot('step');
    
-  var step = +req.session('number');
-    if (!guess) {
-      res.say("I'm Sorry, I didn't hear anything. The number was " + number);
+ // var step = +req.session('number');
+    if (!step) { //rewrite if step equals 1, do this, else if step equals 2, res say this, if step doesn't make any sense, Rez say I'm sorry I didn't understand what you said there. Do you want to start over? And on the last one you should say something like stepwise session should end.
+      res.say("I'm Sorry, I didn't hear you right. Please try again");
     } else if (guess == number) {
       res.say("Congratulations, you guessed the number in " + guesses + (guesses == 1 ? " try" : " tries"));
     } else {
