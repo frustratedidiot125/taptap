@@ -33,18 +33,18 @@ app.set("view engine", "ejs");
 alexaApp.launch(function(req, res) {
 
   
-  res.session('step', 0);
+  res.session('step', 1);
   var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say next to begin, or say a step number if you wish to resume. Say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
-alexaApp.intent('GuessIntent', {
-    "slots": { "guess": "NUMBER" },
-    "utterances": ["{1-100|guess}"]
+alexaApp.intent('NextStepIntent', {
+    "slots": { "step": "NUMBER" },
+    "utterances": ["{1-6|step}"]
   },
   function(req, res) {
     var guesses = (+req.session('guesses')) + 1;
-    var guess = req.slot('guess');
+    var guess = req.slot('step');
     var number = +req.session('number');
     if (!guess) {
       res.say("I'm Sorry, I didn't hear anything. The number was " + number);
