@@ -34,13 +34,13 @@ alexaApp.launch(function(req, res) {
 
   
   res.session('step', 0);
-  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, or say the number of the step you wish to resume. Say next to go to the next step, and Say stop at any time to exit. ";
+  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, or say the number of the step you wish to resume. Say continue or next step to go on to the next step, or Say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
 alexaApp.intent('StepIntent', {
     "slots": {"stepno" : "NUMBER" },
-    "utterances": ["next", "next step", "begin", "{stepno}", "step {stepno}"]
+    "utterances": ["continue", "next step", "begin", "{stepno}", "step {stepno}", "go to {stepno}", "go to step {stepno}", "read step {stepno}", "begin with step {stepno}" "start at step {stepno}"]
   },
   function(req, res) {
   var slotstep = req.slot('stepno');
