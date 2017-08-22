@@ -37,7 +37,7 @@ var steps = {
   4 : 'Use the scissors to cut two holes on the far left and right sides of the box panel opposite the white paper.',
   5 : 'Cover one of the holes with foil and tape it in place. ',
   6 : 'Use the thumbtack, or similar thin, pointy ended object to Punch a pinhole through the foil.',
-  7 : 'now you\'re ready to use your projector to View a tiny projection solar eclipse, or even just the sun, safely. Take the contraption outside, turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You\'ll be able to see the sun\'s projection, inverted, passing through the pinhole on the to your left or right, being focused Inside the Box on the white paper projection screen. Enjoy!'
+  7 : 'now the projector you\'ve built is ready to use. Wait for a solar eclipse, or just a sunny day- The sun is interesting enough on its own- and Take the contraption outside. Turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You\'ll be able to see the sun\'s projection, inverted, passing through the pinhole on the to your left or right, being focused Inside the Box on the white paper projection screen. Enjoy!'
   };
   
 
@@ -45,8 +45,8 @@ var steps = {
 alexaApp.launch(function(req, res) {
 
   
-  res.session('step', 0);
-  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, or say the number of the step you wish to resume. Say continue or next step to go on to the next step, or Say stop at any time to exit. ";
+ // res.session('step', 0); //maybe we want to put that or some variation of this somewhere else like in the intent. We also never  figured out the repeat function but the hell with that.
+  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, or say the number of the step you wish to resume. Say continue to go on to the next step, or Say stop at any time to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
@@ -63,10 +63,12 @@ if (!isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInteger(slotste
     var step = 1;
     
     } else if (slotstep > 7 && !isNaN(slotstep)){
-      res.say("Whoa there, there are only 7 steps. Please choose a step between 1 and 7, or say next and I'll start from where I think you are.").shouldEndSession(false);
+      res.say("Whoa there, there are only 7 steps. Please choose a step between 1 and 7, or say continue and I'll start from where I think you left off.").shouldEndSession(false);
       } else if (slotstep < 0 && !isNaN(slotstep)){
-        res.say("Really? Negative numbers? You must be messing with me  C'mon, let's try again, but this time, use positive integers between 1 and 7. Or say next.").shouldEndSession(false);
+        res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, use positive integers between 1 and 7. Or say continue.").shouldEndSession(false);
         } else {
+          
+          
   
       
       
