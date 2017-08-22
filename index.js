@@ -37,7 +37,7 @@ var steps = {
   4 : 'Use the scissors to cut two holes on the far left and right sides of the box panel opposite the white paper.',
   5 : 'Cover one of the holes with foil and tape it in place. ',
   6 : 'Use the thumbtack, or similar thin, pointy ended object to Punch a pinhole through the foil.',
-  7 : 'now the projector you\'ve built is ready to use. Wait for a solar eclipse, or just a sunny day- The sun is interesting enough on its own- and Take the contraption outside. Turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You\'ll be able to see the sun\'s projection, inverted, passing through the pinhole on the to your left or right, being focused Inside the Box on the white paper projection screen. Enjoy!'
+  7 : 'now the projector you\'ve built is ready to use. Wait for a solar eclipse, or test it out on a sunny day. Go outside, and take the contraption you\'ve built with you. Turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You should be able to see the sun\'s projection, inverted, passing through the pinhole on the to your left or right, being focused Inside the Box on the white paper projection screen. If you don\'t see anything,  try moving the box around, and a tiny image should appear. Happy sciencing!'
   };
   
 
@@ -66,7 +66,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
       res.say("Whoa there, there are only 7 steps. Please choose a step between 1 and 7, or say continue and I'll start from where I think you left off.").shouldEndSession(false);
       } else if (slotstep < 0 && !isNaN(slotstep)){
         res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, use positive integers between 1 and 7. Or say continue.").shouldEndSession(false);
-        } else {
+        } // else if  //somewhere we have to define the we have to check to see if the req session variable is defined and then if it isn't defined, define res.session stepcounter/stepno variable as 1 or zero or whatever. If it is defined, then move on to the rest of the code processing. Why is it step req+1 again, i wonder? ;
           
           
   
