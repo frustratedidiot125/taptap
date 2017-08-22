@@ -31,7 +31,15 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var steps = {
-  'step 1' : 'to begin, you\'ll need to collect the following supplies. A cardboard box, could be a cereal box, white copy paper, scissors, 
+  1 : 'to begin, you\'ll need to collect the following supplies. A cardboard box, could be a cereal box, white copy paper, scissors, tape, aluminum foil, and a thumbtack or other sharp thin object.',
+  2 : '',
+  3 : '',
+  4 : '',
+  5 : '',
+  6 : '',
+  7 : ''
+  }
+  
 
 
 alexaApp.launch(function(req, res) {
