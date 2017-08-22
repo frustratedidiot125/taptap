@@ -1,0 +1,13 @@
+
+Ok so...
+
+Two input routes ...
+
+Do do we want Step 2 to be step one in other words... 
+Do do we want increment before or after the code execution I think after right? 
+That means that means adding the counter to the end, instead of the beginning so that when you pull up the session data from Alexa it's already going to be the right step number. 
+And and if it isn't, then what? If it isn't defined we must Define it if there is no step otherwise specified so, there should be some sort of thing in the if chain that specifies what to do.
+Two basic sub blocks before the Big Block
+Basically basically if a number specified by voice, set step to voice. If voice is screwy, revert or go to next step?|if essionstep is defined, then set step variable to that|if session variable is nonexistent, then Define it?nonexistent, then Define it? And set var step = 1, and increment at end of block? And call speak by res.say("Step " + step + ". " + steps[step] + "when you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
+Then res.session +1 whatever somrbow? Maybe increment the steo number, then set it bto res.session(stepno, step) or stepup
+Is there is there an easier way to do this?
