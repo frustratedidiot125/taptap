@@ -11,3 +11,7 @@ Two basic sub blocks before the Big Block
 Basically basically if a number specified by voice, set step to voice. If voice is screwy, revert or go to next step?|if essionstep is defined, then set step variable to that|if session variable is nonexistent, then Define it?nonexistent, then Define it? And set var step = 1, and increment at end of block? And call speak by res.say("Step " + step + ". " + steps[step] + "when you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
 Then res.session +1 whatever somrbow? Maybe increment the steo number, then set it bto res.session(stepno, step) or stepup
 Is there is there an easier way to do this?
+
+
+
+Scijo divided into categories and set those as different intents or slots or sets of arrays based on slot chosen, if none then go to random. Pick a random number from 1 to 4 and then choose a category based on that number and then if one then you know execute I'm not sure how that would work but the segment for one the segment for physics instead of chemistry or you have to stick it in the Middle where it would work like between or before everything else. Like it gets to find First? As long as it's part of the Apes and not a specific intent like slots with ifs and stead of intent
