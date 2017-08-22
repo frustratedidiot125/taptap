@@ -57,7 +57,7 @@ alexaApp.intent('StepIntent', {
   function(req, res) {
   var slotstep = req.slot('stepno');
   
-if (!isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
+if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
   var step = slotstep; 
   } else if (!isNaN(slotstep) && slotstep == 0){
     var step = 1;
