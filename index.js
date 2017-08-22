@@ -31,13 +31,13 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var steps = {
-  1 : 'to begin, you\'ll need to collect the following supplies. A cardboard box, could be a cereal box, white copy paper, scissors, tape, aluminum foil, and a thumbtack or other sharp thin object.',
-  2 : '',
-  3 : '',
-  4 : '',
-  5 : '',
-  6 : '',
-  7 : ''
+  1 : 'to begin, you\'ll need to collect the following supplies. A cardboard box, could be a cereal box, white copy paper, scissors, tape, aluminum foil, and a thumbtack or other sharp thin pin-like object.',
+  2 : 'Cut a strip of white paper the size of the end of your box and tape it inside. ',
+  3 : 'seal all the seams with strips of tape and aluminum foil to make it light tight. ',
+  4 : 'Use the scissors to cut two holes on the far left and right sides of the box panel opposite the white paper.',
+  5 : 'Cover one of the holes with foil and tape it in place. ',
+  6 : 'Use the thumbtack, or similar thin, pointy ended object to Punch a pinhole through the foil.',
+  7 : 'now you\'re ready to use your projector to View a tiny projection solar eclipse, or even just the sun, safely. Take the contraption outside, turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You\'ll be able to see the sun\'s projection, inverted, passing through the pinhole on the to your left or right, being focused Inside the Box on the white paper projection screen. Enjoy!'
   };
   
 
