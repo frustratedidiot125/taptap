@@ -78,7 +78,7 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
    var step = 1;
  } else if ( persstep == 8 || persstep > 8) {
    var exit = 1;
- } else if (slotstep !== "??" && isNaN(slotstep)) {
+ } else if (slotstep != "??" && isNaN(slotstep)) {
    var garbage = 1;
    
    //Eep - how do we deal with things that are not defined in the slot? Like an invalid intents? Or invalid rejected slots?
@@ -96,7 +96,7 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
     res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say continue to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
     } else if (exit) {
       res.session('step', 1)
-      res.say("Hey, we're all done. If you want to review a step, just say step followed by the step number you'd like to hear.").shouldEndSession(false);
+      res.say("Hey, If you want to review a step, just say step followed by the step number you'd like to hear. You can say continue to start over.").shouldEndSession(false);
     } else if (step == 7) { 
        res.session('step', 1);
        res.say("Okay, one last step, step " + step + ". " + steps[step] +  " Goodbye and Good luck!").shouldEndSession(true);
