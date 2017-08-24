@@ -84,7 +84,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
    
    //Eep - how do we deal with things that are not defined in the slot? Like an invalid intents? Or invalid rejected slots?
    //need to know of if garbage slot like 'pineapple' and persstep is valid, then refer to persstep. if no slot, then wgat
- } else { var didntunderstanderror = 1 } ;      
+ } else { var didntunderstanderror = 1 }       
   
   if (didntunderstanderror){
     res.session('step', 1)
@@ -103,7 +103,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
          persstep = 1;
        } else if (persstep == 0 || !(+req.session('step'))){
            persstep = 1; 
-                    };
+                    }
       res.session('step', persstep)
       res.say("Whoa there, there are only 7 steps to this skill. Please choose a step between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
     } else if (screwingwithme){
@@ -117,14 +117,14 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
          } else { 
          res.say("I'm sorry, I did not understand what you were trying to say there, Please try again  Say continue, or begin, or a valid step number.").shouldEndSession(false);
          res.session('step', 1);
-         };
+         }
       } else {
         res.say("Step " + step + ". " + steps[step] + "when you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
         step += 1;
         res.session('step', step);
-        };
-  };
-                };
+        }
+  }
+                //}
                 );
   
   
