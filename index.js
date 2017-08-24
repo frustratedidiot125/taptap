@@ -76,10 +76,6 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
          var needinteger = 1;
      } else if (!(+req.session('step')) || !persstep || persstep == 0  || persstep == "??"){
    var step = 1;
- 
- } else if (persstep > 0 && persstep < 8 ){
-   var step = persstep;
-   //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
  } else if ( persstep == 8 || persstep > 8) {
    var exit = 1;
  } else if (slotstep !== "??" && isNaN(slotstep)) {
@@ -87,6 +83,12 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
    
    //Eep - how do we deal with things that are not defined in the slot? Like an invalid intents? Or invalid rejected slots?
    //need to know of if garbage slot like 'pineapple' and persstep is valid, then refer to persstep. if no slot, then wgat
+
+ } else if (persstep > 0 && persstep < 8 ){
+   var step = persstep;
+   //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
+ 
+ 
  } else { var didntunderstanderror = 1 }       
   
   if (didntunderstanderror){
