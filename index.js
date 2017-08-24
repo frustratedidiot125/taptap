@@ -38,7 +38,7 @@ var steps = {
   4 : 'Use the scissors to cut two holes on the far left and right sides of the box panel opposite the white paper.',
   5 : 'Cover one of the holes with foil and tape it in place. ',
   6 : 'Use the thumbtack, or similar thin, pointy ended object to Punch a pinhole through the foil.',
-  7 : 'now the projector you\'ve built is ready to use. Wait for a solar eclipse, or test it out on a sunny day. Go outside, and take your contraption with you. Turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You should be able to see the sun\'s projection, inverted, passing through the pinhole on the to your left or right, being focused Inside the Box on the white paper projection screen. If you don\'t see anything,  try moving the box around, and a tiny image should appear. Happy sciencing!'
+  7 : 'At this step the projector you\'ve built should be ready to use! You can wait for a solar eclipse, or you can test it out on any sunny day. Just go outside with your trusty contraption, turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You should be able to see a very small, moderately bright, inverted image of the sun, in sharp focus, projected on the white paper screen on the other end of the inside of the box. If you don\'t see anything,  try moving the box or yourself around, and once you are properly lined up, the image should appear. Cool, eh? Happy sciencing!'
   };
   
 
@@ -99,7 +99,7 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
       res.say("Hey, If you want to review a step, just say step followed by the step number you'd like to hear. You can say continue to start over.").shouldEndSession(false);
     } else if (step == 7) { 
        res.session('step', 1);
-       res.say("Okay, one last step, step " + step + ". " + steps[step] +  " Goodbye and Good luck!").shouldEndSession(true);
+       res.say("Okay, one last step, step " + step + ". " + steps[step] +  " Goodbye!").shouldEndSession(true);
     } else if (step == 8) {
       res.say(steps[step]).shouldEndSession(false);
       res.session('step', 1);
