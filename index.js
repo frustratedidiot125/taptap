@@ -124,6 +124,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
         res.session('step', step);
         };
   };
+                };
                 );
   
   
