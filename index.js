@@ -101,7 +101,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
     } else if (morethanseven){
        if (persstep == 8) {
          persstep = 1;
-       } else if (persstep == 0 || !(+req.session('step')){
+       } else if (persstep == 0 || !(+req.session('step'))){
            persstep = 1; 
                     };
       res.session('step', persstep)
