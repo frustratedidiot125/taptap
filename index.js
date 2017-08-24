@@ -58,7 +58,7 @@ alexaApp.intent('StepIntent', {
   function(req, res) {
   var slotstep = req.slot('stepno');
   var persstep = +req.session('step');
-  console.log("persstep= " + persstep + ", slotstep = " + slotstep + ", number.isintegerslotstep= " + Number.isInteger(slotstep) ); //should it be freaking number. Or should I just be integer?
+  console.log("persstep= " + persstep + ", slotstep = " + slotstep + ", number.isintegerslotstep= " + isInteger(slotstep) ); //should it be freaking number. Or should I just be integer?
   
 if (slotstep && slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
   var step = slotstep; 
