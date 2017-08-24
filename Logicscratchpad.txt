@@ -15,3 +15,38 @@ Is there is there an easier way to do this?
 
 
 Scijo divided into categories and set those as different intents or slots or sets of arrays based on slot chosen, if none then go to random. Pick a random number from 1 to 4 and then choose a category based on that number and then if one then you know execute I'm not sure how that would work but the segment for one the segment for physics instead of chemistry or you have to stick it in the Middle where it would work like between or before everything else. Like it gets to find First? As long as it's part of the Apes and not a specific intent like slots with ifs and stead of intent
+
+
+
+
+Deld
+      //////////////////////delete some below this line?
+ // var step = (+req.session('step')) + 1; 
+//           //}
+ //  var slotstep = req.slot('stepno');
+   
+ // var step = +req.session('stepno');
+  //// Now I just have to figure out how to assign steps 1 through 7 and how to go to them and whether or not to use goto or some sort of array or use if statements
+  // We have to head in if step = 8 with the auto increment, then say either you're all doned exit, or reset the counter and go to zero on the res.session. 
+  // Have you considered a repeat function? Like to repeat the step? Because that doesn't work in the current structure.
+  // res.say step [0] will that even work?
+   // if (!step) { //rewrite if step equals 1, do this, else if step equals 2, res say this, if step doesn't make any sense, Rez say I'm sorry I didn't understand what you said there. Do you want to start over? And on the last one you should say something like stepwise session should end.
+      res.say("I'm Sorry, I didn't hear you right. Please try again");
+    } else if (guess == number) {
+      res.say("Congratulations, you guessed the number in " + guesses + (guesses == 1 ? " try" : " tries"));
+    } else {
+      if (guess > number) {
+        res.say("Guess lower");
+      } else if (guess < number) {
+        res.say("Guess higher");
+      } else if (guess = "??") { 
+        res.say("I'm sorry, that didn't sound like an actual number. Please try again, but this time, use just your integers!");
+        } else if (isNaN(guess)) {
+                  res.say("I'm sorry, I didn't hear you say a number. Please try again.");
+          }
+      res.reprompt("I didn't hear a number. Please try again.");
+      res.session('guesses', guesses);
+      res.shouldEndSession(false);
+    }
+  }
+);
