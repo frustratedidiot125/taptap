@@ -93,8 +93,9 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
   
   if (didntunderstanderror){
     res.session('step', 1)
-    res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say continue to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
-    } else if (exit) {
+    //res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say continue to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
+    res.say(steps[8]).shouldEndSession(false);
+  } else if (exit) {
       res.session('step', 1)
       res.say("Hey, If you want to review a step, just say step followed by the step number you'd like to hear. You can say continue to start over.").shouldEndSession(false);
     } else if (step == 7) { 
@@ -156,8 +157,9 @@ alexaApp.intent('StepContinue', {
   
   if (didntunderstanderror){
     res.session('step', 1)
-    res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say begin to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
-    } else if (exit) {
+    //res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say begin to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
+   res.say(steps[8]).shouldEndSession(false);
+  } else if (exit) {
       res.session('step', 1)
       res.say("Hey, If you want to review a step, just say step followed by the step number you'd like to hear.").shouldEndSession(false);
     } else if (step == 7) { 
