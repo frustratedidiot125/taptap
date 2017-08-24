@@ -74,13 +74,14 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
      } else if (!(+req.session('step')) || !persstep || persstep == 0  || persstep == "??"){
    var step = 1;
  
- } else if ((+req.session('step')) && persstep && persstep > 0 && persstep < 8 ){
+ } else if (persstep > 0 && persstep < 8 ){
    var step = persstep;
    //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
  } else if ( persstep == 8 || persstep > 8) {
    var exit = 1;
  } else if (slotstep !== "??" && isNaN(slotstep)) {
    var garbage = 1;
+   
    //Eep - how do we deal with things that are not defined in the slot? Like an invalid intents? Or invalid rejected slots?
    //need to know of if garbage slot like 'pineapple' and persstep is valid, then refer to persstep. if no slot, then wgat
  } else { var didntunderstanderror = 1 } ;      
@@ -98,52 +99,36 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
       res.say(steps[step]).shouldEndSession(false);
       res.session('step', 1);
     } else if (morethanseven){
-      if (persstep > 0 && persstep < 7){
-      persstep += 1;
-       } else if (persstep == 8) {
+       if (persstep == 8) {
          persstep = 1;
        } else if (persstep == 0 || !(+req.session('step')){
-           persstep = 8; 
+           persstep = 1; 
                     };
       res.session('step', persstep)
       res.say("Whoa there, there are only 7 steps to this skill. Please choose a step between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
     } else if (screwingwithme){
         res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, let's use positive integers between 1 and 7 when specifying steps. Or say continue. Darned jokers.").shouldEndSession(false);
         res.session('step', persstep);
-    } else if (
-        
+    } else if (garbage){
+       if (persstep > 0 && persstep < 8) {
+         persstep += 1;
+         res.say("I'm sorry, I did not understand what you were trying to say there, but let's proceed as if you'd asked me to move on to the next step." + "Step " + persstep + ". " + steps[persstep] + " Please say continue to go on to the next step.").shouldEndSession(false);
+         res.session('step', persstep);
+         } else { 
+         res.say("I'm sorry, I did not understand what you were trying to say there, Please try again  Say continue, or begin, or a valid step number.").shouldEndSession(false);
+         res.session('step', 1);
+         };
+      } else {
+        res.say("Step " + step + ". " + steps[step] + "when you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
+        step += 1;
+        res.session('step', step);
+        };
+  };
+                );
   
   
-      //////////////////////delete some below this line?
- // var step = (+req.session('step')) + 1; 
-//           //}
- //  var slotstep = req.slot('stepno');
-   
- // var step = +req.session('stepno');
-  //// Now I just have to figure out how to assign steps 1 through 7 and how to go to them and whether or not to use goto or some sort of array or use if statements
-  // We have to head in if step = 8 with the auto increment, then say either you're all doned exit, or reset the counter and go to zero on the res.session. 
-  // Have you considered a repeat function? Like to repeat the step? Because that doesn't work in the current structure.
-  // res.say step [0] will that even work?
-    if (!step) { //rewrite if step equals 1, do this, else if step equals 2, res say this, if step doesn't make any sense, Rez say I'm sorry I didn't understand what you said there. Do you want to start over? And on the last one you should say something like stepwise session should end.
-      res.say("I'm Sorry, I didn't hear you right. Please try again");
-    } else if (guess == number) {
-      res.say("Congratulations, you guessed the number in " + guesses + (guesses == 1 ? " try" : " tries"));
-    } else {
-      if (guess > number) {
-        res.say("Guess lower");
-      } else if (guess < number) {
-        res.say("Guess higher");
-      } else if (guess = "??") { 
-        res.say("I'm sorry, that didn't sound like an actual number. Please try again, but this time, use just your integers!");
-        } else if (isNaN(guess)) {
-                  res.say("I'm sorry, I didn't hear you say a number. Please try again.");
-          }
-      res.reprompt("I didn't hear a number. Please try again.");
-      res.session('guesses', guesses);
-      res.shouldEndSession(false);
-    }
-  }
-);
+  
+
 alexaApp.intent("AMAZON.HelpIntent", {
   "slots": {} },
   function(request, response) {
