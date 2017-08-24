@@ -60,12 +60,12 @@ alexaApp.intent('StepIntent', {
   var persstep = +req.session('step');
   console.log("persstep= " + persstep + ", slotstep = " + slotstep); 
   
-if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
+if (slotstep && slotstep > 0 && slotstep < 8 && Number.isInteger(slotstep)){
   var step = slotstep; 
     } else if (slotstep == 0){
     var step = 8;
     
-    } else if (slotstep > 7 && !isNaN(slotstep)){
+    } else if (slotstep > 7 ){
    var morethanseven = 1; 
    // //  res.say("Whoa there, there are only 7 steps. Please choose a step between 1 and 7, or say continue and I'll start from where I think you left off.").shouldEndSession(false);
      } else if (slotstep < 0 && !isNaN(slotstep)){
