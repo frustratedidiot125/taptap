@@ -31,7 +31,7 @@ app.set("view engine", "ejs");
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 var steps = {
-  8 : 'Hi. I can tell you how to build an eclipse projection box. Just say begin.',
+  8 : 'Hi. I can tell you how to build an eclipse projection box. Just say begin to begin, Or say stop to exit.',
   1 : 'to begin, you\'ll need to collect the following supplies. A cardboard box, could be a cereal box, white copy paper, scissors, tape, aluminum foil, and a thumbtack or other sharp thin pin-like object.',
   2 : 'Cut a strip of white paper the size of the end of your box and tape it inside. ',
   3 : 'seal all the seams with strips of tape and aluminum foil to make it light tight. ',
@@ -82,10 +82,31 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
    //need to know of if garbage slot like 'pineapple' and persstep is valid, then refer to persstep. if no slot, then wgat
  } else { var didntunderstanderror = 1 } ;      
   
+  If (didntunderstanderror){
+    res.session('step', 1)
+    res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say continue to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
+    } else if (exit) {
+      res.session('step', 1)
+      res.say("Hey, we're all done. If you want to review a step, just say step followed by the step number you'd like to hear.").shouldEndSession(false);
+    } else if (step == 7) { 
+       res.session('step', 1);
+       res.say("Okay, one last step, step " + step + ". " + steps[step] +  "Goodbye and Good luck!").shouldEndSession(true);
+    } else if (step == 8) {
+      res.say(steps[step]).shouldEndSession(false);
+      res.session('step', 1);
+    } else if (morethanseven){
+      if (persstep > 0 && persstep < 7){
+      persstep += 1;
+       } else if (persstep == 8) {
+         persstep = 1 
+         } else if (persstep == 0 || !(+req.session('step')){
+           per
+      res.session('step', persstep)
+      res.say("Whoa there, there are only 7 steps to this skill. Please choose a step between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
       
   
   
-      //////////////////////
+      //////////////////////delete some below this line?
  // var step = (+req.session('step')) + 1; 
 //           //}
  //  var slotstep = req.slot('stepno');
