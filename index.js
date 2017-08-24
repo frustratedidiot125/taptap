@@ -99,6 +99,9 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
     } else if (step == 8) {
       res.say(steps[step]).shouldEndSession(false);
       res.session('step', 1);
+      } else if (morethanseven){
+        if (persstep == 8) {
+          persstep = 1;
     } else if (persstep == 0 || !(+req.session('step'))){
            persstep = 1; 
                     }
@@ -154,27 +157,7 @@ alexaApp.intent('StepContinue', {
     } else if (step == 8) {
       res.say(steps[step]).shouldEndSession(false);
       res.session('step', 1);
-    } else if (morethanseven){
-       if (persstep == 8) {
-         persstep = 1;
-       } else if (persstep == 0 || !(+req.session('step'))){
-           persstep = 1; 
-                    }
-      res.session('step', persstep);
-      res.say("Whoa there, there are only 7 steps to this skill. Please choose a step between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
-    } else if (screwingwithme){
-        res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, let's use positive integers between 1 and 7 when specifying steps. Or say continue. Darned jokers.").shouldEndSession(false);
-        res.session('step', persstep);
-    } else if (garbage){
-       if (persstep > 0 && persstep < 8) {
-         persstep += 1;
-         res.say("I'm sorry, I did not understand what you were trying to say there, but let's proceed as if you'd asked me to move on to the next step." + "Step " + persstep + ". " + steps[persstep] + " Please say continue to go on to the next step.").shouldEndSession(false);
-         res.session('step', persstep);
-         } else { 
-         res.say("I'm sorry, I did not understand what you were trying to say there, Please try again  Say continue, or begin, or a valid step number.").shouldEndSession(false);
-         res.session('step', 1);
-         }
-      } else {
+    } else {
         res.say("Step " + step + ". " + steps[step] + " When you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
         step += 1;
         res.session('step', step);
