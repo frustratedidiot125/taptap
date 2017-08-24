@@ -150,6 +150,8 @@ alexaApp.intent('StepContinue', {
    //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
  } else if ( persstep == 8 || persstep > 8) {
    var exit = 1;
+ } else if (persstep == 0) {
+   var step = 8;
  }  else { var didntunderstanderror = 1 }       
   
   if (didntunderstanderror){
