@@ -6,7 +6,7 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // ALWAYS setup the alexa app and attach it to express before anything else.
-var alexaApp = new alexa.app("moo");
+var alexaApp = new alexa.app("alexa");
 
 alexaApp.express({
   expressApp: app,
@@ -133,7 +133,7 @@ alexaApp.intent("AMAZON.HelpIntent", {
   "slots": {} },
   function(request, response) {
     
-var HELP_MESSAGE = "Follow the guessing prompts or say stop to exit at any time.";
+var HELP_MESSAGE = "Say continue to proceed to the next instructive step, or specify a step by sayibg saying step followed by a step number between 1 and 7.  Follow the instructions and further prompts or say stop to exit at any time. And remember, do NOT look directly at the sun!";
     response.say(HELP_MESSAGE).shouldEndSession(false);
   }
  );
