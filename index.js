@@ -38,7 +38,7 @@ var steps = {
   4 : 'Use the scissors to cut two holes on the far left and right sides of the box panel opposite the white paper.',
   5 : 'Cover one of the holes with foil and tape it in place. ',
   6 : 'Use the thumbtack, or similar thin, pointy ended object to Punch a pinhole through the foil.',
-  7 : 'At this step the projector you\'ve built should be ready to use! You can wait for a solar eclipse, or you can test it out on any sunny day. Just go outside with your trusty contraption, turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You should be able to see a very small, moderately bright, inverted image of the sun, in sharp focus, projected on the white paper screen on the other end of the inside of the box. If you don\'t see anything,  try moving the box or yourself around, and once you are properly lined up, the image should appear. Cool, eh? Happy sciencing!'
+  7 : 'At this stage, the projector you\'ve built should be ready to use! You can wait for a solar eclipse, or you can test it out on any sunny day. Just go outside with your trusty contraption, turn your back to the Sun, line up the box with your shadow, and look through the big hole.  You should be able to see a very small, moderately bright, inverted image of the sun, in sharp focus, projected on the white paper screen on the other end of the inside of the box. If you don\'t see anything,  try moving the box or yourself around, and once you are properly lined up, the image should appear. Cool, eh? Happy sciencing!'
   };
   
 
@@ -47,7 +47,7 @@ alexaApp.launch(function(req, res) {
 
   
  // res.session('persstep', 0); //maybe we want to put that or some variation of this somewhere else like in the intent. We also never  figured out the repeat function but the hell with that.
-  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, and I'll start with step 1, or, if we've done this before, I'll begin where we last left off. Alternatively, you can say the number of any step from 1 to 7 you'd like to review, and I'll start from there instead. After each instruction, you can say continue to go on to the next step, or stop to exit. ";
+  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, and I'll start with step 1, or, if we've done this before, I'll begin where we last left off. Alternatively, you can say the number of any step from 1 to 7 you'd like to review, and I'll start from there instead. After each instruction, you can say continue to go on to the next step, or stop to exit.  ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
