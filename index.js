@@ -116,7 +116,7 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
         res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, let's use positive integers between 1 and 7 when specifying steps. Or say continue. Darned jokers. It's a good thing I have an accommodating sense of humor!").shouldEndSession(false);
         res.session('step', persstep);
       } else if (needinteger){
-        res.say("Really? Decimals? The steps aren't that long! I'm almost insulted! Do please give me a step number using integers this time, and only integers, or say continue to go on to the next appropriate step.").shouldEndSession(false);
+        res.say("Really? Decimals? The steps aren't that long! I'd be offended if I wasn't so amused. And impressed! Seriously, though, Do please give me a step number this time using whole integers, and only whole integers, or say continue to go on to the next appropriate step.").shouldEndSession(false);
         res.session('step', persstep);
     } else if (garbage){
        if (persstep > 0 && persstep < 8) {
