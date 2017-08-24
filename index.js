@@ -79,10 +79,13 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
    //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
  } else if ( persstep == 8 || persstep > 8) {
    var exit = 1;
+ } else if (slotstep !== "??" && isNaN(slotstep)) {
+   var garbage = 1;
+   //Eep - how do we deal with things that are not defined in the slot? Like an invalid intents? Or invalid rejected slots?
    //need to know of if garbage slot like 'pineapple' and persstep is valid, then refer to persstep. if no slot, then wgat
  } else { var didntunderstanderror = 1 } ;      
   
-  If (didntunderstanderror){
+  if (didntunderstanderror){
     res.session('step', 1)
     res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say continue to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
     } else if (exit) {
@@ -98,12 +101,17 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
       if (persstep > 0 && persstep < 7){
       persstep += 1;
        } else if (persstep == 8) {
-         persstep = 1 
-         } else if (persstep == 0 || !(+req.session('step')){
-           per
+         persstep = 1;
+       } else if (persstep == 0 || !(+req.session('step')){
+           persstep = 8; 
+                    };
       res.session('step', persstep)
       res.say("Whoa there, there are only 7 steps to this skill. Please choose a step between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
-      
+    } else if (screwingwithme){
+        res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, let's use positive integers between 1 and 7 when specifying steps. Or say continue. Darned jokers.").shouldEndSession(false);
+        res.session('step', persstep);
+    } else if (
+        
   
   
       //////////////////////delete some below this line?
