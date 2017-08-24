@@ -94,7 +94,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
       res.say("Hey, we're all done. If you want to review a step, just say step followed by the step number you'd like to hear.").shouldEndSession(false);
     } else if (step == 7) { 
        res.session('step', 1);
-       res.say("Okay, one last step, step " + step + ". " + steps[step] +  "Goodbye and Good luck!").shouldEndSession(true);
+       res.say("Okay, one last step, step " + step + ". " + steps[step] +  " Goodbye and Good luck!").shouldEndSession(true);
     } else if (step == 8) {
       res.say(steps[step]).shouldEndSession(false);
       res.session('step', 1);
@@ -119,7 +119,7 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
          res.session('step', 1);
          }
       } else {
-        res.say("Step " + step + ". " + steps[step] + "when you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
+        res.say("Step " + step + ". " + steps[step] + " When you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
         step += 1;
         res.session('step', step);
         }
