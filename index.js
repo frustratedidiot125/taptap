@@ -47,7 +47,7 @@ alexaApp.launch(function(req, res) {
 
   
  // res.session('persstep', 0); //maybe we want to put that or some variation of this somewhere else like in the intent. We also never  figured out the repeat function but the hell with that.
-  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, or say the number of the step you wish to resume. Say continue to go on to the next step, or Say stop at any time to exit. ";
+  var prompt = "Hi there! I can tell you how to build an eclipse projection box. Just say begin, and I'll start with step 1, or, if we've done this before, I'll begin where we last left off. Alternatively, you can say the number of any step you'd like to review, and I'll start from there instead. After each instruction, you can say continue to go on to the next step, or stop to exit. ";
   res.say(prompt).reprompt(prompt).shouldEndSession(false);
 });
 
