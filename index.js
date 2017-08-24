@@ -72,7 +72,7 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
    var screwingwithme = 1;
      ////   res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, use positive integers between 1 and 7. Or say continue.").shouldEndSession(false);
         // else if  //***********somewhere we have to define the we have to check to see if the req session variable is defined and then if it isn't defined, define res.session stepcounter/stepno variable as 1 or zero or whatever. If it is defined, then move on to the rest of the code processing. Why is it step req+1 again, i wonder? ;
-       } else if (slotstop > 0 && parseFloat(slotstep) != parseInt(slotstep) && !isNaN(slotstep)){ 
+       } else if (slotstep > 0 && parseFloat(slotstep) != parseInt(slotstep) && !isNaN(slotstep)){ 
          var needinteger = 1;
      } else if (!(+req.session('step')) || !persstep || persstep == 0  || persstep == "??"){
    var step = 1;
