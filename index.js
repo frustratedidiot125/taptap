@@ -119,11 +119,11 @@ if (slotstep && slotstep > 0 && slotstep < 8 && parseFloat(slotstep) == parseInt
         res.session('step', persstep);
     } else if (garbage){
        if (persstep > 0 && persstep < 8) {
-         persstep += 1;
-         res.say("I'm sorry, I did not understand what you were trying to say there, but let's proceed as if you'd asked me to move on to the next step, ok? " + "Step " + persstep + ". " + steps[persstep] + " Please say continue to go on to the next step.").shouldEndSession(false);
+        // persstep += 1;
+         res.say("I'm sorry, I did not understand what you were trying to say there. Please choose a step number between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
          res.session('step', persstep);
          } else { 
-         res.say("I'm sorry, I did not understand what you were trying to say there, Please try again. Say continue, or begin, or a valid step number.").shouldEndSession(false);
+         res.say("I'm sorry, I did not understand what you were trying to say there, Please try again. Choose a step number between 1 and 7, or say begin and I'll start from the beginning.").shouldEndSession(false);
          res.session('step', 1);
          }
       } else {
