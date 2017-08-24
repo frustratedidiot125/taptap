@@ -53,7 +53,7 @@ alexaApp.launch(function(req, res) {
 
 alexaApp.intent('StepIntent', {
     "slots": {"stepno" : "NUMBER" },
-    "utterances": ["continue", "next step", "begin", "{stepno}", "step {stepno}", "go to {stepno}", "go to step {stepno}", "read step {stepno}", "begin with step {stepno}" "start at step {stepno}"]
+    "utterances": ["continue", "next step", "begin", "{stepno}", "step {stepno}", "go to {stepno}", "go to step {stepno}", "read step {stepno}", "begin with step {stepno}", "start at step {stepno}"]
   },
   function(req, res) {
   var slotstep = req.slot('stepno');
