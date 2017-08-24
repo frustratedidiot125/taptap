@@ -128,6 +128,63 @@ if (slotstep && !isNaN(slotstep) && slotstep > 0 && slotstep < 8 && Number.isInt
                 //}
                 );
   
+alexaApp.intent('StepContinue', {
+    "slots": {},
+    "utterances": ["continue", "next step", "begin", "{stepno}", "step {stepno}", "go to {stepno}", "go to step {stepno}", "read step {stepno}", "begin with step {stepno}", "start at step {stepno}"]
+  },
+  function(req, res) {
+  var slotstep = req.slot('stepno');
+  var persstep = +req.session('step');
+  console.log("persstep= " + persstep + ", slotstep = " + slotstep); 
+  
+//Intro block 3
+ if (persstep > 0 && persstep < 8 ){
+   var step = persstep;
+   //for lower down the road //if step = 7 then res.say or end session. or set res.saybsection to...somethjng else  or set turuthiness to a varuable 
+ } else if ( persstep == 8 || persstep > 8) {
+   var exit = 1;
+ }  else { var didntunderstanderror = 1 }       
+  
+  if (didntunderstanderror){
+    res.session('step', 1)
+    res.say("Oh my, this is embarrassing, but I've lost count of where we were stepwise. You can say continue to start at the beginning, or step followed by the step number you'd like to resume, or say stop to exit.").shouldEndSession(false);
+    } else if (exit) {
+      res.session('step', 1)
+      res.say("Hey, we're all done. If you want to review a step, just say step followed by the step number you'd like to hear.").shouldEndSession(false);
+    } else if (step == 7) { 
+       res.session('step', 1);
+       res.say("Okay, one last step, step " + step + ". " + steps[step] +  " Goodbye and Good luck!").shouldEndSession(true);
+    } else if (step == 8) {
+      res.say(steps[step]).shouldEndSession(false);
+      res.session('step', 1);
+    } else if (morethanseven){
+       if (persstep == 8) {
+         persstep = 1;
+       } else if (persstep == 0 || !(+req.session('step'))){
+           persstep = 1; 
+                    }
+      res.session('step', persstep);
+      res.say("Whoa there, there are only 7 steps to this skill. Please choose a step between 1 and 7, or say continue and I'll start from where I think we left off.").shouldEndSession(false);
+    } else if (screwingwithme){
+        res.say("Really? Negative numbers? You must be messing with me.  C'mon, let's try again, but this time, let's use positive integers between 1 and 7 when specifying steps. Or say continue. Darned jokers.").shouldEndSession(false);
+        res.session('step', persstep);
+    } else if (garbage){
+       if (persstep > 0 && persstep < 8) {
+         persstep += 1;
+         res.say("I'm sorry, I did not understand what you were trying to say there, but let's proceed as if you'd asked me to move on to the next step." + "Step " + persstep + ". " + steps[persstep] + " Please say continue to go on to the next step.").shouldEndSession(false);
+         res.session('step', persstep);
+         } else { 
+         res.say("I'm sorry, I did not understand what you were trying to say there, Please try again  Say continue, or begin, or a valid step number.").shouldEndSession(false);
+         res.session('step', 1);
+         }
+      } else {
+        res.say("Step " + step + ". " + steps[step] + " When you're ready for the next step, say continue, or say step and the step number you wish to jump to.").shouldEndSession(false);
+        step += 1;
+        res.session('step', step);
+        }
+  }
+                //}
+                );
   
   
 
