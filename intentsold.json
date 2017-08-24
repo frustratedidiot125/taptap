@@ -1,0 +1,39 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "StepIntent",
+      "samples": [
+        "continue",
+        "next step",
+        "begin",
+        "{stepno}",
+        "step {stepno}",
+        "go to {stepno}",
+        "go to step {stepno}",
+        "read step {stepno}",
+        "start at step {stepno}",
+        "begin at step {stepno}",
+        "begin with step {stepno}"
+      ],
+      "slots": [
+        {
+          "name": "stepno",
+          "type": "AMAZON.NUMBER",
+          "samples": []
+        }
+      ]
+    }
+  ]
+}
