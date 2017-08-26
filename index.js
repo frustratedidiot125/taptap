@@ -48,6 +48,8 @@ alexaApp.intent('Whatsmorse', {
   },
   function(req, res) {
   var slotchar = req.slot('character');
+  console.log("slot=" + slotchar + ", morsehash[slot]=" + morsehash[slotchar]);
+  
  // validate character, if good, then go, if no good, then say dont understand or dont kmow. for what youve entered. orrr just evaluate as morsehash[slotchar] and if no result, then whatever. 
   if (!slotchar){
     res.say("I'm sorry, I didn't catch that. Please try again. Say what's morse for, followed by the single character you'd like to translate. Say stop to exit.").shouldEndSession(false);
