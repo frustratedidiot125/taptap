@@ -47,14 +47,17 @@ alexaApp.intent('Whatsmorse', {
     "utterances": ["continue", "next step", "begin", "{stepno}", "step {stepno}", "go to {stepno}", "go to step {stepno}", "read step {stepno}", "begin with step {stepno}", "start at step {stepno}"]
   },
   function(req, res) {
-  var slotchar = req.slot('character');
+ var fullslot = req.slot('character');
+  var lowerslot = fullslot.toLowerCase();
+  var slotchar = lowerslot.charAt(0);
+  
   console.log("slot=" + slotchar + ", morsehash[slot]=" + morsehash[slotchar]);
   
  // validate character, if good, then go, if no good, then say dont understand or dont kmow. for what youve entered. orrr just evaluate as morsehash[slotchar] and if no result, then whatever. 
   if (!slotchar){
     res.say("I'm sorry, I didn't catch that. Please try again. Say what's morse for, followed by the single character you'd like to translate. Say stop to exit.").shouldEndSession(false);
   } else if (!morsehash[slotchar]){
-    res.say("I'm sorry, I don't know the morse code sequence for " + slotchar + ". Please try again, and make sure to supply a single character only, or say stop to exit.").shouldEndSession(false);
+    res.say("I'm sorry, I don't know the morse code sequence for " + fullslot + ". Please try again, and make sure to supply a single character only, or say stop to exit.").shouldEndSession(false);
   } else if (morsehash[slotchar]){
     res.say("The morse code for <say-as interpret-as=\"spell-out\">" + slotchar + "</say-as> is <say-as interpret-as=\"spell-out\">" + morsehash[slotchar] + "</say-as>. Say what's morse for and give a letter or number, or say stop to exit.").shouldEndSession(false);  
   } else {
@@ -67,13 +70,15 @@ alexaApp.intent('Whatsmorse', {
     "utterances": ["continue", "next step", "begin", "{stepno}", "step {stepno}", "go to {stepno}", "go to step {stepno}", "read step {stepno}", "begin with step {stepno}", "start at step {stepno}"]
   },
   function(req, res) {
-  var slotchar = req.slot('character');
+   var fullslot = req.slot('character');
+  var lowerslot = fullslot.toLowerCase();
+  var slotchar = lowerslot.charAt(0);
     console.log("slot=" + slotchar + ", morsehash[slot]=" + morsehash[slotchar]);
  // validate character, if good, then go, if no good, then say dont understand or dont kmow. for what youve entered. orrr just evaluate as morsehash[slotchar] and if no result, then whatever. 
   if (!slotchar){
     res.say("I'm sorry, I didn't catch that. Please try again. Say what's morse for, followed by the single character you'd like to translate. Say stop to exit.").shouldEndSession(false);
   } else if (!morsehash[slotchar]){
-    res.say("I'm sorry, I don't know the morse code sequence for " + slotchar + ". Please try again, and make sure to supply a single character only, or say stop to exit.").shouldEndSession(false);
+    res.say("I'm sorry, I don't know the morse code sequence for " + fullslot + ". Please try again, and make sure to supply a single character only, or say stop to exit.").shouldEndSession(false);
   } else if (morsehash[slotchar]){
     res.say("The morse code for <say-as interpret-as=\"spell-out\">" + slotchar + "</say-as> is <say-as interpret-as=\"spell-out\">" + morsehash[slotchar] + "</say-as>.").shouldEndSession(true);  
   } else {
